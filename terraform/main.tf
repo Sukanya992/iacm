@@ -5,10 +5,11 @@ terraform {
       version = ">= 2.0.0"
     }
   }
-}provider "google" {
-  project = "plated-epigram-452709-h6"
-  zone = "us-central1-c"
+}
 
+provider "google" {
+  project = "plated-epigram-452709-h6"
+  zone    = "us-central1-c"
 }
 
 provider "helm" {
@@ -28,5 +29,5 @@ module "delegate" {
     helm = helm
   }
 
-  depends_on = [module.cluster]
+  depends_on = [module.cluster]  # Ensure delegate installs after the cluster
 }
