@@ -1,9 +1,3 @@
-provider "helm" {
-  kubernetes {
-    config_path = "~/.kube/config"
-  }
-}
-
 resource "null_resource" "install_delegate" {
   provisioner "local-exec" {
     command = <<EOT
